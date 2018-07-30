@@ -3,8 +3,11 @@
 
 ;=======================================================
 
-; Swap asdw to arrow keys and vise versa if the game is in focus
-#If WinActive("Crusader") || WinActive("Stronghold")
+;Swap asdw to arrow keys and vise versa if the game is in focus
+
+;WinActive("ahk_exe Something.exe") ;Would also work
+
+#If WinActive("Crusader") or WinActive("Stronghold") 
 {
 	w::Up
 	a::Left
@@ -21,10 +24,10 @@
 ;		And now for the extra buttons on the mouse 
 ;=======================================================
 
-#IfWinActive, Minecraft
+#If WinActive("Minecraft")
 {
    XButton2::
-    	Send, t
+    Send, t
 	sleep 50
 	Send, /undo {enter}
 	Sleep 100
@@ -35,12 +38,12 @@
 	Send, n {a up} {D up}
 	Sleep 100
 	sendinput, {F3 up}
-        Return
+    Return
 }
-#IfWinActive, Planetbase
+#If WinActive("Planetbase")
 {
    XButton2::
-    	Send, {NumpadSub}
+    Send, {NumpadSub}
    	Return
    XButton1::
 	Send, {NumpadAdd}
