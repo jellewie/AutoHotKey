@@ -11,7 +11,7 @@ $Insert::return
 
 ;WinActive("ahk_exe Something.exe") ;Would also work
 
-#If WinActive("Crusader") or WinActive("Stronghold") 
+#If WinActive("Crusader") or WinActive("Stronghold")  or WinActive("TmForever")
 {
 	w::Up
 	a::Left
