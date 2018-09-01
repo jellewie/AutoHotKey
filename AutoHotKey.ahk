@@ -1,6 +1,10 @@
 ;This is my big script that change some keybindings on games
 ;This also adds functionality to the extra mouse buttons in games that do not support this natively
 
+;The next 2 lines will disable the 'Insert button', use Alt+Insert to use it
+$Insert::return
+!Insert::Send, {Insert} 
+
 ;=======================================================
 
 ;Swap asdw to arrow keys and vise versa if the game is in focus
