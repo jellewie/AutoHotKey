@@ -53,3 +53,18 @@ $Insert::return
 	Send, {NumpadAdd}
 	Return
 }
+#If WinActive("Inventor")
+{
+   XButton1::
+	Send {MButton down}
+	KeyWait, XButton1
+	Send {MButton up}
+return
+XButton2::
+	Send {Shift down}
+	Send {MButton down}
+	KeyWait, XButton2
+	Send {Shift up}
+	Send {MButton up}
+return
+}
