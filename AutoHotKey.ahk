@@ -5,6 +5,11 @@
 $Insert::return
 !Insert::Send, {Insert} 
 
+;The next 2 lines will disable the 'ScrollLock button', use Alt+ScrollLock to use it
+$ScrollLock::return
+!ScrollLock::Send, {ScrollLock} 
+
+
 ;=======================================================
 
 ;Swap asdw to arrow keys and vise versa if the game is in focus
