@@ -73,3 +73,16 @@ $ScrollLock::return
 	Send {MButton up}
 	return
 }
+#If WinActive("Ultimaker Cura")
+{
+   XButton1::
+	Send {MButton down}
+	KeyWait, XButton1
+	Send {MButton up}
+	return
+   XButton2::
+	Send {RButton down}
+	KeyWait, XButton2
+	Send {RButton up}
+	return
+}
