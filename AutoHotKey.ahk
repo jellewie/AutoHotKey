@@ -58,7 +58,7 @@ $ScrollLock::return
 	Send, {NumpadAdd}
 	Return
 }
-#If WinActive("Autodesk Inventor")
+#If WinActive("Autodesk Inventor", Inventor.exe)
 {
    XButton1::
 	Send {MButton down}
@@ -73,7 +73,7 @@ $ScrollLock::return
 	Send {MButton up}
 	return
 }
-#If WinActive("Ultimaker Cura")
+#If WinActive("Ultimaker Cura", Cura.exe)
 {
    XButton1::
 	Send {MButton down}
