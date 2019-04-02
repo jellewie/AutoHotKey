@@ -47,29 +47,29 @@ $ScrollLock::return
 	Send, n {a up} {D up}
 	Sleep 100
 	sendinput, {F3 up}
-    Return
+   Return
 }
 #If WinActive("Planetbase")
 {
    XButton2::
-    Send, {NumpadSub}
+    	Send, {NumpadSub}
    	Return
    XButton1::
 	Send, {NumpadAdd}
 	Return
 }
-#If WinActive("Inventor")
+#If WinActive("Autodesk Inventor")
 {
    XButton1::
 	Send {MButton down}
 	KeyWait, XButton1
 	Send {MButton up}
-return
-XButton2::
+	return
+   XButton2::
 	Send {Shift down}
 	Send {MButton down}
 	KeyWait, XButton2
 	Send {Shift up}
 	Send {MButton up}
-return
+	return
 }
