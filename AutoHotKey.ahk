@@ -86,3 +86,12 @@ $ScrollLock::return
 	Send {RButton up}
 	return
 }
+#IfWinActive,ahk_exe Excel.exe
+{
+   XButton1::
+	Send $
+	return
+   XButton2::
+	Send $
+	return
+}
