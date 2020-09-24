@@ -14,7 +14,7 @@ $ScrollLock::return
 
 ;Swap asdw to arrow keys and vise versa if the game is in focus
 
-;WinActive("ahk_exe Something.exe") ;Would also work
+;#IfWinActive,ahk_exe something.exe 		;Would also work
 
 #If WinActive("Crusader") or WinActive("Stronghold") or WinActive("TmForever")
 {
@@ -33,7 +33,7 @@ $ScrollLock::return
 ;		And now for the extra buttons on the mouse 
 ;=======================================================
 
-#If WinActive("Minecraft")
+#IfWinActive,ahk_exe Minecraft.exe
 {
    XButton2::
     Send, t
@@ -58,7 +58,7 @@ $ScrollLock::return
 	Send, {NumpadAdd}
 	Return
 }
-#If WinActive("Autodesk Inventor", Inventor.exe)
+#IfWinActive,ahk_exe Inventor.exe
 {
    XButton1::
 	Send {MButton down}
@@ -73,7 +73,7 @@ $ScrollLock::return
 	Send {MButton up}
 	return
 }
-#If WinActive("Ultimaker Cura", Cura.exe)
+#IfWinActive,ahk_exe Cura.exe
 {
    XButton1::
 	Send {MButton down}
