@@ -11,18 +11,13 @@ $ScrollLock::return
 
 
 ;=======================================================
-
 ;Swap asdw to arrow keys and vise versa if the game is in focus
-
-;#IfWinActive,ahk_exe something.exe 		;Would also work
-
-#If WinActive("Crusader") or WinActive("Stronghold") or WinActive("TmForever")
+#If WinActive(ahk_exe, Crusader.exe) or WinActive(ahk_exe, Stronghold.exe) or WinActive(ahk_exe, TmForever.exe)
 {
 	w::Up
 	a::Left
 	s::Down
 	d::Right
-	
 	Up::w
 	Left::a
 	Down::s
@@ -32,33 +27,8 @@ $ScrollLock::return
 ;=======================================================
 ;		And now for the extra buttons on the mouse 
 ;=======================================================
-
-#IfWinActive,ahk_exe Minecraft.exe
-{
-   XButton2::
-    Send, t
-	sleep 50
-	Send, /undo {enter}
-	Sleep 100
-   	Return
-   XButton1::
-	sendinput, {F3 down}
-	Sleep 100
-	Send, n {a up} {D up}
-	Sleep 100
-	sendinput, {F3 up}
-   Return
-}
-#If WinActive("Planetbase")
-{
-   XButton2::
-    	Send, {NumpadSub}
-   	Return
-   XButton1::
-	Send, {NumpadAdd}
-	Return
-}
-#IfWinActive,ahk_exe Inventor.exe
+;Unify camera comtrols
+#If WinActive("ahk_exe Inventor.exe")
 {
    XButton1::
 	Send {MButton down}
@@ -73,7 +43,22 @@ $ScrollLock::return
 	Send {MButton up}
 	return
 }
-#IfWinActive,ahk_exe Cura.exe
+#If WinActive("ahk_exe FreeCAD.exe")
+{
+   XButton1::
+	Send {MButton down}
+	KeyWait, XButton1
+	Send {MButton up}
+	return
+   XButton2::
+	Send {Shift down}
+	Send {RButton down}
+	KeyWait, XButton2
+	Send {Shift up}
+	Send {RButton up}
+	return
+}
+#If WinActive("ahk_exe Cura.exe")
 {
    XButton1::
 	Send {MButton down}
@@ -86,7 +71,37 @@ $ScrollLock::return
 	Send {RButton up}
 	return
 }
-#IfWinActive,ahk_exe Excel.exe
+
+;More stuff
+
+#If WinActive("ahk_exe Minecraft.exe")
+{
+   XButton1::
+	sendinput, {F3 down}
+	Sleep 100
+	Send, n {a up} {D up}
+	Sleep 100
+	sendinput, {F3 up}
+   Return
+   XButton2::
+    Send, t
+	sleep 50
+	Send, /undo {enter}
+	Sleep 100
+   	Return
+}
+
+#If WinActive("ahk_exe Planetbase.exe")
+{
+   XButton1::
+	Send, {NumpadAdd}
+	Return
+   XButton2::
+    Send, {NumpadSub}
+   	Return
+}
+
+#If WinActive("ahk_exe excel.exe")
 {
    XButton1::
 	Send $
