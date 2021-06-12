@@ -12,7 +12,7 @@ $ScrollLock::return
 
 ;=======================================================
 ;Swap asdw to arrow keys and vise versa if the game is in focus
-#If WinActive(ahk_exe, Crusader.exe) or WinActive(ahk_exe, Stronghold.exe) or WinActive(ahk_exe, TmForever.exe)
+#If WinActive("ahk_exe Stronghold_Crusader_Extreme.exe") or WinActive("ahk_exe Crusader.exe") or WinActive("ahk_exe Stronghold.exe") or WinActive("ahk_exe TmForever.exe")
 {
 	w::Up
 	a::Left
