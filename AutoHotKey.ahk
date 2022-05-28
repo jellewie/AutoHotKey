@@ -101,7 +101,7 @@ $ScrollLock::return
    	Return
 }
 
-#If WinActive("ahk_exe excel.exe")
+#If WinActive("ahk_exe excel.exe") or WinActive("ahk_exe soffice.bin") 
 {
    XButton1::
 	Send $
