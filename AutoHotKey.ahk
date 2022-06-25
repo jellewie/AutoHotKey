@@ -46,9 +46,11 @@ $ScrollLock::return
 #If WinActive("ahk_exe FreeCAD.exe")
 {
    XButton1::
-	Send {MButton down}
-	KeyWait, XButton1
-	Send {MButton up}
+	Send {Ctrl down}
+	Send {RButton down}
+	KeyWait, XButton2
+	Send {Ctrl up}
+	Send {RButton up}
 	return
    XButton2::
 	Send {Shift down}
